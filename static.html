@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fashion hub</title>
+    <style>
+        .head {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .nav-links ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            font: 1em sans-serif;
+        }
+
+        .icon {
+            padding: 25px;
+        }
+
+        .button {
+            background: none;
+            border: none;
+        }
+
+        .icon-img {
+            object-fit: contain;
+        }
+
+        .list li {
+            color: grey;
+            transition: color 0.3 ease;
+            cursor: pointer;
+        }
+
+        .list li:hover {
+            color: black;
+        }
+
+        .hero {
+            height: 130vh;
+            background-image: url('Overlay+Image.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card {
+            background-color: rgba(250, 250, 250, 0.5);
+            margin: 10px;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .shop-btn {
+            background-color: rgba(250, 250, 250, 0.5);
+            color: black;
+            border: 1px solid black;
+            padding: 12px 28px;
+            border-radius: 8px;
+        }
+
+        .shop-btn:hover {
+            background-color: black;
+            color: white;
+            opacity: 0.85;
+            transition: background-color 0.3s ease;
+        }
+
+        .h3 {
+            font-family: 'Cormorant Garmond', serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-top: 50px;
+            padding-left: 30px;
+            margin-bottom: 0%;
+        }
+
+        .category-grid {
+            margin-top: 40px;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(3);
+            grid-template-rows: repeat(2);
+        }
+
+        .category-grid img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .men {
+            grid-row-start: 1;
+            grid-row-end: 3;
+
+        }
+
+        .women {
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .f-box {
+            width: 98vw;
+            height: 584px;
+            margin-top: 70px;
+            background-color: #f9f9f9
+        }
+
+        .grid-item {
+            position: relative;
+        }
+
+        .text-card {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 20px;
+        }
+
+        .pic-card {
+            width: 270px;
+            padding: 2px;
+        }
+
+        .pic-card img {
+            border-radius: 8px;
+        }
+
+        .parent-pic {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .pa {
+            padding: 2px;
+        }
+
+        .footer {
+            background-color: #f9f9f9;
+            padding: 40px 60px;
+            font-size: 14px;
+            line-height: 1.5;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        .footer {
+            background-color: #f5f5f7;
+            color: #6e6e73;
+            padding: 40px 60px;
+            font-size: 14px;
+            line-height: 1.5;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .footer-brand {
+            max-width: 320px;
+        }
+
+        .footer-brand .logo {
+            color: #1d1d1f;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+        }
+
+        .footer-brand .tagline {
+            margin: 0 0 10px 0;
+            color: #6e6e73;
+            font-size: 13px;
+        }
+
+        .footer-brand .copyright {
+            margin-top: 30px;
+            font-size: 11px;
+            color: #86868b;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 60px;
+        }
+
+        .footer-column h3 {
+            color: #1d1d1f;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column ul li a {
+            color: #6e6e73;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #1d1d1f;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #1d1d1f;
+        }
+
+        .address {
+            margin: 0;
+            font-size: 12px;
+            color: #6e6e73;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="head">
+        <div>
+            <img src="Text.jpg">
+        </div>
+        <nav class="nav-links">
+            <ul class="list">
+                <li>Men</li>
+                <li>Women</li>
+                <li>Accessories</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <div class="icon">
+            <button class="button" type="button">
+                <img src="search-icon.jpg" class="icon-img">
+            </button>
+            <button class="button" type="button" class="icon-img">
+                <img src="wishlist.jpg">
+            </button>
+            <button class="button" type="button" class="icon-img">
+                <img src="profile-icon.jpg">
+            </button>
+            <button class="button" type="button" class="icon-img">
+                <img src="cart-icon.jpg">
+            </button>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-card">
+                <h1>New Summer Collection</h1>
+            </div>
+            <div class="hero-card">
+                <p>Discover the definitive high-fashion utility pieces for the modern era.<br>Minimalism meets
+                    uncompromising structure</p>
+            </div>
+            <div>
+                <button class="shop-btn">Shop Now</button>
+                <button class="shop-btn">Explore Colloctions</button>
+            </div>
+        </section>
+        <section>
+            <h2 class="h3">Shop by Category</h2>
+            <hr>
+            <div class="category-grid">
+                <div class="grid-item men">
+                    <img src="MEN.jpg" alt="Men">
+                    <div class="text-card">Men</div>
+                </div>
+                <div class="grid-item women">
+                    <img src="women.jpg" alt="Women">
+                    <div class="text-card">Women</div>
+                </div>
+                <div class="grid-item acc">
+                    <img src="accessories.jpg" alt="Accessories">
+                    <div class="text-card">Accessories</div>
+                </div>
+                <div class="grid-item kid">
+                    <img src="Kid.jpg" alt="Kid">
+                    <div class="text-card">Kids</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="f-box">
+                <div class="features">
+                    <h2 class="h3">Featured Products</h2>
+                    <a href="#" class="h3">View all</a>
+                </div>
+                <div class="parent-pic">
+                    <div class="pic-card">
+                        <img src="black-shirt.jpg">
+                        <p class="p1 pa">Outerwear</p>
+                        <p class="p2 pa">Structured Utility Jacket</p>
+                        <p class="p3 pa">$450</p>
+                    </div>
+                    <div class="pic-card">
+                        <img src="white-shirt.jpg">
+                        <p class="p1 pa">Tops</p>
+                        <p class="p2 pa">Oversized Toplin Shirt</p>
+                        <p class="p3 pa">$180</p>
+                    </div>
+                    <div class="pic-card">
+                        <img src="black-pant.jpg">
+                        <p class="p1 pa">Bottoms</p>
+                        <p class="p2 pa">Tailored Wide-Leg Trouser</p>
+                        <p class="p3 pa">$280</p>
+                    </div>
+                    <div class="pic-card">
+                        <img src="black -shoe.jpg">
+                        <p class="p1 pa">Shoes</p>
+                        <p class="p2 pa">Monolith leather boots</p>
+                        <p class="p3 pa">$650</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-container">
+                <div>
+                    <div class="logo">
+                        <img src="Text.jpg" alt="Logo">
+                    </div>
+                    <p class="logoline">High fashion utility for the modern era.</p>
+                    <p class="logoline">Minimalist aesthetic meeting uncompromising quality.</p>
+                    <p class="copyright">© 2024 Fashion Hub. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Shipping & Return</a></li>
+                            <li><a href="#">Size Guide</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact</h3>
+                        <p class="address">
+                            123 Fashion Street<br>
+                            New York, NY 10001<br>
+                            Mon-Fri,9am-6pm
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
